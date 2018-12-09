@@ -4,6 +4,8 @@ class Bicycle {
 
   //----start of Active Record design pattern -----
     static protected $database;
+    static protected $db_columns =['id','brand', 'model', 'year', 'category', 'color' , 'price' , 'gender', 'weight_kg' ,
+        'condition_id' , 'description'];
 
     static public function set_database($database){
       self::$database = $database;
@@ -45,6 +47,50 @@ class Bicycle {
             return false;
         }
     }
+
+    public function create(){
+      $attributes = $this->attributes();
+      $sql = "INSERT INTO bicycles(";
+      $sql .= join(', ', array_keys($attributes));
+      $sql .= ") VALUES ('";
+      $sql .= join("', '", array_values($attributes));
+      $sql .= "')";
+      $result = self::$database->query($sql);
+
+      if ($result){
+        $this->id = self::$database->insert_id;
+      }else{
+        //echo self::$database->errno();
+        redirect_to(url_for("/staff/bicycles/new.php"));
+      }
+      return $result;
+    }
+    protected function attributes(){
+      $attributes = [];
+      foreach(self::$db_columns as $value){
+          if ($value == 'id'){continue ;}
+          $attributes[$value] = self::$database->escape_string($this->$value) ;
+        }
+      return $attributes ;
+    }
+
+    protected function modified_attributes($attributes){
+      $modifed_attributes = [];
+      foreach($attributes as $key => $value){
+        if (property_exists($this , $key) && !is_null($value)){
+          $modified_attributes [] = "{$key} = {$value}";
+        }
+      }
+      return $modified_attributes ;
+    }
+
+//    protected function sanitize_input($args){
+//      $sanitized_attributes = [];
+//      foreach ($args as $key => $value){
+//        $sanitized_attributes [$key] = self::$database->escape_string($value);
+//      }
+//      return $sanitized_attributes ;
+//    }
 
   //----- end of Active Record design pattern----
     public $id;
