@@ -18,7 +18,7 @@ if(is_post_request()) {
   $args['description'] = $_POST['description'] ?? NULL;
 
   $bicycle = new Bicycle($args);
-  $result = $bicycle->create();
+  $result = $bicycle->save();
 
   if($result === true) {
     $new_id = $bicycle->id;
@@ -26,11 +26,12 @@ if(is_post_request()) {
     redirect_to(url_for('/staff/bicycles/show.php?id=' . $new_id));
   } else {
     // show errors
+
   }
 
 } else {
   // display the form
-  $bicycle = [];
+  $bicycle = new Bicycle();
 }
 
 ?>

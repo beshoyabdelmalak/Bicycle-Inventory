@@ -48,8 +48,16 @@ class Bicycle {
         }
     }
 
+    public function save(){
+      if (isset($this->id))
+        $result = $this->update();
+      else
+        $result = $this->create();
+      return $result;
+    }
+
     public function create(){
-      $attributes = $this->attributes();
+      $attributes = $this->sanitize_input();
       $sql = "INSERT INTO bicycles(";
       $sql .= join(', ', array_keys($attributes));
       $sql .= ") VALUES ('";
@@ -65,32 +73,62 @@ class Bicycle {
       }
       return $result;
     }
+
+    public function update(){
+      $sql ='UPDATE bicycles SET ';
+      $attributes = $this->sanitize_input();
+      $attributes_pair = [];
+      foreach ($attributes as $key => $value){
+          $attributes_pair [] = "{$key} = '{$value}'  ";
+         //$attributes_pair [] = "{$key} = {$value}  ";
+
+      }
+      $sql .= join(', ', $attributes_pair);
+      $sql .=" WHERE id ='" . self::$database->escape_string($this->id) . "' LIMIT 1";
+      $result = self::$database->query($sql);
+      if (!$result){
+        redirect_to(url_for("/staff/bicycles/edit.php"));
+      }
+      return $result;
+    }
+
+
     protected function attributes(){
       $attributes = [];
       foreach(self::$db_columns as $value){
           if ($value == 'id'){continue ;}
-          $attributes[$value] = self::$database->escape_string($this->$value) ;
+          $attributes[$value] = $this->$value ;
         }
       return $attributes ;
     }
+//
+//    protected function modified_attributes($attributes){
+//      $modifed_attributes = [];
+//      foreach($attributes as $key => $value){
+//        if (property_exists($this , $key) && !is_null($value)){
+//          $modified_attributes [] = "{$key} = {$value}";
+//        }
+//      }
+//      return $modified_attributes ;
+//    }
 
-    protected function modified_attributes($attributes){
-      $modifed_attributes = [];
-      foreach($attributes as $key => $value){
+    public function merge_attributes($args){
+      foreach ($args as $key => $value){
         if (property_exists($this , $key) && !is_null($value)){
-          $modified_attributes [] = "{$key} = {$value}";
+          $this->$key = $value;
         }
       }
-      return $modified_attributes ;
     }
 
-//    protected function sanitize_input($args){
-//      $sanitized_attributes = [];
-//      foreach ($args as $key => $value){
-//        $sanitized_attributes [$key] = self::$database->escape_string($value);
-//      }
-//      return $sanitized_attributes ;
-//    }
+
+    protected function sanitize_input(){
+      $attributes = $this->attributes();
+      $sanitized_attributes = [];
+      foreach ($attributes as $key => $value){
+        $sanitized_attributes [$key] = self::$database->escape_string($value);
+      }
+      return $sanitized_attributes ;
+    }
 
   //----- end of Active Record design pattern----
     public $id;
@@ -102,8 +140,8 @@ class Bicycle {
     public $description;
     public $gender;
     public $price;
-    protected $weight_kg;
-    protected $condition_id;
+    public $weight_kg;
+    public $condition_id;
 
     public const CATEGORIES = ['Road', 'Mountain', 'Hybrid', 'Cruiser', 'City', 'BMX'];
 
@@ -132,7 +170,7 @@ class Bicycle {
 
        //Caution: allows private/protected properties to be set
        foreach($args as $k => $v) {
-         if(property_exists($this, $k)) {
+         if(property_exists($this, $k) && !is_null($v)) {
            $this->$k = $v;
          }
        }
