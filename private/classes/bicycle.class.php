@@ -1,11 +1,11 @@
 <?php
-
 class Bicycle {
 
   //----start of Active Record design pattern -----
     static protected $database;
     static protected $db_columns =['id','brand', 'model', 'year', 'category', 'color' , 'price' , 'gender', 'weight_kg' ,
         'condition_id' , 'description'];
+    public $errors = [];
 
     static public function set_database($database){
       self::$database = $database;
@@ -57,6 +57,9 @@ class Bicycle {
     }
 
     public function create(){
+      $this->validate();
+      if(!empty($this->errors))
+        return false;
       $attributes = $this->sanitize_input();
       $sql = "INSERT INTO bicycles(";
       $sql .= join(', ', array_keys($attributes));
@@ -75,6 +78,9 @@ class Bicycle {
     }
 
     public function update(){
+      $this->validate();
+      if(!empty($this->errors))
+        return false;
       $sql ='UPDATE bicycles SET ';
       $attributes = $this->sanitize_input();
       $attributes_pair = [];
@@ -128,6 +134,23 @@ class Bicycle {
         $sanitized_attributes [$key] = self::$database->escape_string($value);
       }
       return $sanitized_attributes ;
+    }
+
+    protected function validate()
+    {
+      $error = false;
+      $attributes = $this->attributes();
+      foreach ($attributes as $key => $value) {
+        if ($key != 'description' && is_blank($value)) {
+          $error = true;
+        }
+
+      }
+      if ($error === true) {
+        $this->errors [] = 'fields with * should not be left blank';
+      }
+      if (!numeric($attributes['weight_kg']) || !numeric($attributes['price']))
+        $this->errors[] = "weight and price must be numeric ";
     }
 
   //----- end of Active Record design pattern----

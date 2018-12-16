@@ -1,6 +1,7 @@
 <?php
 
   ob_start(); // turn on output buffering
+  ini_set('display_errors', 1);
 
   // session_start(); // turn on sessions if needed
 
@@ -25,6 +26,7 @@
 
   require_once('functions.php');
   require_once('status_error_functions.php');
+  require_once('validation_functions.php');
   require_once('db_credentials.php');
   require_once('db_functions.php');
   // Load class definitions manually

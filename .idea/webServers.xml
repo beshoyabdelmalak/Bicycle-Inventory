@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="5246de3d-09ae-428b-bf2f-df0161dce920" name="mamp (2)" url="http://localhost:8888/phpoop/Exercise Files/Chapter_01/01_04/">
+        <fileTransfer port="0" accessType="LOCAL" />
+      </webServer>
+    </option>
+    <groups>
+      <group>
+        <name>mamp</name>
+        <servers>
+          <name value="mamp (2)" />
+        </servers>
+      </group>
+    </groups>
+  </component>
+</project>
