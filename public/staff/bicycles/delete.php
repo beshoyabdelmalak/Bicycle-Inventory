@@ -6,14 +6,19 @@ if(!isset($_GET['id'])) {
   redirect_to(url_for('/staff/bicycles/index.php'));
 }
 $id = $_GET['id'];
+$bicycle = Bicycle::find_by_id($id);
+if(!$bicycle)
+    redirect_to(url_for("/staff/index.php"));
 
 if(is_post_request()) {
 
   // Delete bicycle
+  $result = $bicycle->delete();
+  if(result) {
 
-  $_SESSION['message'] = 'The bicycle was deleted successfully.';
-  redirect_to(url_for('/staff/bicycles/index.php'));
-
+    $_SESSION['message'] = 'The bicycle was deleted successfully.';
+    redirect_to(url_for('/staff/bicycles/index.php'));
+  }
 } else {
   // Display form
 }

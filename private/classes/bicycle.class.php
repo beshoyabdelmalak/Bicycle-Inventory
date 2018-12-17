@@ -98,6 +98,16 @@ class Bicycle {
       return $result;
     }
 
+    public function delete(){
+      $sql = 'DELETE FROM bicycles ';
+      $sql .= "WHERE id='" . $this->id . "' " ;
+      $sql .= "LIMIT 1";
+      $result = self::$database->query($sql);
+      if (!result)
+        redirect_to(url_for("/staff/bicycles/delete.php?id=" . $this->id));
+      return $result;
+    }
+
 
     protected function attributes(){
       $attributes = [];
