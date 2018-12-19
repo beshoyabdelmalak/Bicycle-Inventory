@@ -1,167 +1,15 @@
 <?php
-class Bicycle {
+class Bicycle extends DatabaseObject{
 
   //----start of Active Record design pattern -----
-    static protected $database;
-    static protected $db_columns =['id','brand', 'model', 'year', 'category', 'color' , 'price' , 'gender', 'weight_kg' ,
+    //static protected $database;
+    static protected $db_columns = ['id','brand', 'model', 'year', 'category', 'color' , 'price' , 'gender', 'weight_kg' ,
         'condition_id' , 'description'];
-    public $errors = [];
-
-    static public function set_database($database){
-      self::$database = $database;
-    }
-
-    static public function find_by_sql($sql){
-        $result = self::$database->query($sql);
-        if(!$result){
-            exit("Database Error");
-        }
-        $object_array = [];
-
-        while($record = $result->fetch_assoc()){
-            $object_array [] = self::instantiate($record);
-        }
-        $result->free();
-        return $object_array;
-    }
-
-    static protected function instantiate($record){
-        $object = new self ($record);
-        return $object;
-    }
+    static protected $table_name = 'bicycles';
+    //public $errors = [];
 
 
-    static public function find_all(){
-        $sql = 'select * from bicycles' ;
-        return self::find_by_sql($sql);
-    }
 
-    static public function find_by_id($id){
-        $sql = "select * from bicycles ";
-        $sql .= "where id='". self::$database->escape_string($id) ."'" ;
-        $obj_array = self::find_by_sql($sql);
-        if(!empty($obj_array)){
-            //array_shift just return the first item of the array
-            return array_shift($obj_array);
-        }else{
-            return false;
-        }
-    }
-
-    public function save(){
-      if (isset($this->id))
-        $result = $this->update();
-      else
-        $result = $this->create();
-      return $result;
-    }
-
-    public function create(){
-      $this->validate();
-      if(!empty($this->errors))
-        return false;
-      $attributes = $this->sanitize_input();
-      $sql = "INSERT INTO bicycles(";
-      $sql .= join(', ', array_keys($attributes));
-      $sql .= ") VALUES ('";
-      $sql .= join("', '", array_values($attributes));
-      $sql .= "')";
-      $result = self::$database->query($sql);
-
-      if ($result){
-        $this->id = self::$database->insert_id;
-      }else{
-        //echo self::$database->errno();
-        redirect_to(url_for("/staff/bicycles/new.php"));
-      }
-      return $result;
-    }
-
-    public function update(){
-      $this->validate();
-      if(!empty($this->errors))
-        return false;
-      $sql ='UPDATE bicycles SET ';
-      $attributes = $this->sanitize_input();
-      $attributes_pair = [];
-      foreach ($attributes as $key => $value){
-          $attributes_pair [] = "{$key} = '{$value}'  ";
-         //$attributes_pair [] = "{$key} = {$value}  ";
-
-      }
-      $sql .= join(', ', $attributes_pair);
-      $sql .=" WHERE id ='" . self::$database->escape_string($this->id) . "' LIMIT 1";
-      $result = self::$database->query($sql);
-      if (!$result){
-        redirect_to(url_for("/staff/bicycles/edit.php"));
-      }
-      return $result;
-    }
-
-    public function delete(){
-      $sql = 'DELETE FROM bicycles ';
-      $sql .= "WHERE id='" . $this->id . "' " ;
-      $sql .= "LIMIT 1";
-      $result = self::$database->query($sql);
-      if (!result)
-        redirect_to(url_for("/staff/bicycles/delete.php?id=" . $this->id));
-      return $result;
-    }
-
-
-    protected function attributes(){
-      $attributes = [];
-      foreach(self::$db_columns as $value){
-          if ($value == 'id'){continue ;}
-          $attributes[$value] = $this->$value ;
-        }
-      return $attributes ;
-    }
-//
-//    protected function modified_attributes($attributes){
-//      $modifed_attributes = [];
-//      foreach($attributes as $key => $value){
-//        if (property_exists($this , $key) && !is_null($value)){
-//          $modified_attributes [] = "{$key} = {$value}";
-//        }
-//      }
-//      return $modified_attributes ;
-//    }
-
-    public function merge_attributes($args){
-      foreach ($args as $key => $value){
-        if (property_exists($this , $key) && !is_null($value)){
-          $this->$key = $value;
-        }
-      }
-    }
-
-
-    protected function sanitize_input(){
-      $attributes = $this->attributes();
-      $sanitized_attributes = [];
-      foreach ($attributes as $key => $value){
-        $sanitized_attributes [$key] = self::$database->escape_string($value);
-      }
-      return $sanitized_attributes ;
-    }
-
-    protected function validate()
-    {
-      $error = false;
-      $attributes = $this->attributes();
-      foreach ($attributes as $key => $value) {
-        if ($key != 'description' && is_blank($value)) {
-          $error = true;
-        }
-
-      }
-      if ($error === true) {
-        $this->errors [] = 'fields with * should not be left blank';
-      }
-      if (!numeric($attributes['weight_kg']) || !numeric($attributes['price']))
-        $this->errors[] = "weight and price must be numeric ";
-    }
 
   //----- end of Active Record design pattern----
     public $id;
@@ -236,6 +84,22 @@ class Bicycle {
       } else {
         return "Unknown";
       }
+    }
+
+    protected function validate(){
+      $error = false;
+      $attributes = $this->attributes();
+      foreach ($attributes as $key => $value) {
+        if ($key != 'description' && is_blank($value)) {
+          $error = true;
+        }
+
+      }
+      if ($error === true) {
+        $this->errors [] = 'fields with * should not be left blank';
+      }
+      if (!numeric($attributes['weight_kg']) || !numeric($attributes['price']))
+        $this->errors[] = "weight and price must be numeric ";
     }
 
   }
