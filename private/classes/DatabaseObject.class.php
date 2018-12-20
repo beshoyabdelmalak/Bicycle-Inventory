@@ -164,6 +164,8 @@
     protected function validate()
     {
         //to be overridden with each child class
+      $this->errors = [];
+      return errors ;
 
     }
 

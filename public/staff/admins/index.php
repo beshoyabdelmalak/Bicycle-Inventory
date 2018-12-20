@@ -32,7 +32,7 @@ $admins = Admin::find_all();
       <?php foreach($admins as $admin) { ?>
         <tr>
           <td><?php echo h($admin->id); ?></td>
-          <td><?php echo h($admin->fist_name); ?></td>
+          <td><?php echo h($admin->first_name); ?></td>
           <td><?php echo h($admin->last_name); ?></td>
           <td><?php echo h($admin->username); ?></td>
           <td><?php echo h($admin->email); ?></td>

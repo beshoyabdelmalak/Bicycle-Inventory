@@ -12,6 +12,7 @@
     //static protected $database;
     static protected $db_columns = ['id','first_name', 'last_name', 'email', 'username', 'hashed_password'];
     static protected $table_name = 'admins';
+    public $required_password = true;
     //public $errors = [];
 
 
@@ -23,6 +24,8 @@
     public $last_name;
     public $email;
     public $username;
+    public $password;
+    public $confirm_password;
     public $hashed_password;
 
 
@@ -65,9 +68,82 @@
       if ($error === true) {
         $this->errors [] = 'fields with * should not be left blank';
       }
-      if (!numeric($attributes['weight_kg']) || !numeric($attributes['price']))
-        $this->errors[] = "weight and price must be numeric ";
+
+      //validation fo the first name
+      if(!has_length($this->first_name, array('min'=>2 , 'max' => 255))) {
+        $this->errors [] = 'first name should be more than 2 and less than 255 letters ';
+      }
+
+      //validation for the last name
+      if(!has_length($this->last_name, array('min'=>2 , 'max'=>255))){
+        $this->errors[] = 'last name should be more than 2 and less than 255 letters ';
+      }
+
+      //validation for the user name
+      if (!has_length($this->username, array('min'=>8 , 'max'=>255))){
+        $this->errors[] = 'username should be more than 8 and less than 255 letters ';
+      }elseif(!has_unique_username($this->username, $this->id ?? 0)){
+        $this->errors [] = 'the username you chose is already taken' ;
+      }
+
+      //validate the email
+      if(!has_valid_email_format($this->email)){
+        $this->errors[] = 'this is not a valid email format';
+      }
+
+      //validate the password
+      if($this->required_password == true) {
+        if (!has_length_greater_than($this->password, 6)) {
+          $this->errors[] = 'password must be more than 6 characters ';
+        } elseif (!preg_match('/[A-Z]/', $this->password)) {
+          $this->errors[] = 'password must include at least one uppercase character ';
+        } elseif (!preg_match('/[a-z]/', $this->password)) {
+          $this->errors[] = 'password must include at least one lowercase character ';
+        } elseif (!preg_match('/[0-9]/', $this->password)) {
+          $this->errors[] = 'password must include at least one number ';
+        } elseif (!preg_match('/[^A-Za-z0-9\s]/', $this->password)) {
+          $this->errors[] = 'password must include at least one symbol ';
+        }
+      }
+
+      //validate confirm password
+      if($this->password !== $this->confirm_password){
+        $this->errors [] = 'the password does not match';
+      }
+
     }
+
+    protected function hash_password(){
+      $this->hashed_password = password_hash($this->password , PASSWORD_BCRYPT);
+    }
+
+    public function create (){
+      $this->hash_password();
+      return parent::create();
+    }
+
+    public function update (){
+      $this->hash_password();
+      if ($this->password =='') {
+        $this->required_password = false;
+      }else {
+        $this->hash_password();
+      }
+      return parent::update();
+    }
+
+    static public function find_by_username($username){
+      $sql = "select * from ".static::$table_name. ' ';
+      $sql .= "where username='". self::$database->escape_string($username) ."'" ;
+      $obj_array = static::find_by_sql($sql);
+      if(!empty($obj_array)){
+        //array_shift just return the first item of the array
+        return array_shift($obj_array);
+      }else{
+        return false;
+      }
+    }
+
 
   }
 

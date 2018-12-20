@@ -100,6 +100,12 @@
   //   has_unique_username('johnqpublic', 4)
   function has_unique_username($username, $current_id="0") {
     // Need to re-write for OOP
+    //instead we can make this column unique in the database
+    $admin  = Admin::find_by_username($username) ;
+    if ($admin && $admin->id != $current_id ){
+      return false;
+    }
+    return true;
   }
   function numeric($value){
     if(is_numeric($value))
