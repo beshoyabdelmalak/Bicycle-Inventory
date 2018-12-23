@@ -144,6 +144,10 @@
       }
     }
 
+    public function verify($password){
+      return password_verify($password, $this->hashed_password);
+    }
+
 
   }
 
