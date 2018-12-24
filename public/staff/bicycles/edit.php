@@ -18,7 +18,7 @@ if(is_post_request()) {
   $result = $bicycle->save();
 
   if ($result === true) {
-      $_SESSION['message'] = 'The bicycle was updated successfully.';
+      $session->msg( 'The bicycle was updated successfully.');
       redirect_to(url_for('/staff/bicycles/show.php?id=' . $id));
   } else {
       // show errors

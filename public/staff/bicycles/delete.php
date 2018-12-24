@@ -17,7 +17,7 @@ if(is_post_request()) {
   $result = $bicycle->delete();
   if(result) {
 
-    $_SESSION['message'] = 'The bicycle was deleted successfully.';
+    $session->msg('The bicycle was deleted successfully.');
     redirect_to(url_for('/staff/bicycles/index.php'));
   }
 } else {

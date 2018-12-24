@@ -17,7 +17,7 @@ if(is_post_request()) {
   $result = $admin->delete();
   if(result) {
 
-    $_SESSION['message'] = 'The admin was deleted successfully.';
+    $session->msg('The admin was deleted successfully.');
     redirect_to(url_for('/staff/admins/index.php'));
   }
 } else {

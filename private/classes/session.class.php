@@ -47,7 +47,7 @@
       unset($_SESSION['last_login']);
     }
 
-    public function check_stored_id(){
+    private function check_stored_id(){
       if(isset($_SESSION['admin_id'])) {
         $this->admin_id = $_SESSION['admin_id'];
         $this->username = $_SESSION['username'];
@@ -59,12 +59,26 @@
       return $this->username;
     }
 
-    public function login_timeout(){
+    private function login_timeout(){
       if(time() - $this->last_login > self::MAX_TIME)
         return true;
       else return false;
     }
 
+
+    public function msg($msg = ""){
+      if (!empty($msg)){
+        //this is a set method
+        $_SESSION['message'] = $msg;
+        return true;
+      }else{
+        return $_SESSION['message'] ?? '';
+      }
+    }
+
+    public function clear_msg(){
+      unset($_SESSION['message']);
+   }
   }
 
 
