@@ -19,8 +19,9 @@
     <navigation>
             <ul>
               <?php if ($session->check_logged_in()) {?>
-                <li><a href="<?php echo url_for('/staff/index.php'); ?>">Menu</a></li>
-                <li><a href="<?php echo url_for('/staff/logout.php'); ?>">logout</a></li>
+                  <li>username: <?php echo $session->get_username();?></li>
+                  <li><a href="<?php echo url_for('/staff/index.php'); ?>">Menu</a></li>
+                  <li><a href="<?php echo url_for('/staff/logout.php'); ?>">logout</a></li>
               <?php } ?>
             </ul>
     </navigation>

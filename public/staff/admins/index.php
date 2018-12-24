@@ -1,7 +1,8 @@
 <?php require_once('../../../private/initialize.php'); ?>
 
 <?php
-  
+
+  require_login();
 // Find all bicycles;
 $admins = Admin::find_all();
   

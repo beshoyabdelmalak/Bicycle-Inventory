@@ -8,16 +8,19 @@
 
   class Session {
 
-    public $admin_id;
-    public $username;
+    private $admin_id;
+    private $username;
+    public $last_login;
+    //each session will last for 2 hours
+    public const MAX_TIME = 60 *60*2 ;
 
 
     public function __construct(){
-      $this->check_stored_id();
       session_start();
-
+      //because the session object is being recreated every time the initialize file is required
+      //so we check if there is some one already logged in
+      $this->check_stored_id();
     }
-
     public function logging_in($admin){
       //prevent sessions fixation attacks
       if($admin) {
@@ -26,11 +29,13 @@
         $_SESSION['admin_id'] = $admin->id;
         $this->username = $admin->username;
         $_SESSION['username'] = $admin->username;
+        $this->last_login = time();
+        $_SESSION['last_login'] = time();
       }
     }
 
     public function check_logged_in(){
-      return isset($_SESSION['admin_id']);
+      return (isset($this->admin_id) && !$this->login_timeout());
     }
 
     public function logging_out(){
@@ -38,11 +43,26 @@
       unset($_SESSION['admin_id']);
       unset($this->username);
       unset($_SESSION['username']);
+      unset($this->last_login);
+      unset($_SESSION['last_login']);
     }
 
     public function check_stored_id(){
-      if(isset($_SESSION['admin_id']))
+      if(isset($_SESSION['admin_id'])) {
         $this->admin_id = $_SESSION['admin_id'];
+        $this->username = $_SESSION['username'];
+        $this->last_login = $_SESSION['last_login'];
+      }
+    }
+
+    public function get_username(){
+      return $this->username;
+    }
+
+    public function login_timeout(){
+      if(time() - $this->last_login > self::MAX_TIME)
+        return true;
+      else return false;
     }
 
   }

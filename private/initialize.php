@@ -48,5 +48,5 @@
   $db = db_connect();
   DatabaseObject::set_database($db);
 
-  $session = new Session;
+  $session = new Session();
 ?>

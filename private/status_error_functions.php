@@ -1,5 +1,15 @@
 <?php
 
+//check if an admin is logged in
+function require_login(){
+  global $session;
+  if (!$session->check_logged_in())
+    redirect_to(url_for('/staff/login.php'));
+  else{
+    //do nothing
+  }
+}
+
 function display_errors($errors=array()) {
   $output = '';
   if(!empty($errors)) {

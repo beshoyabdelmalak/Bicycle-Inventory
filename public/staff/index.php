@@ -2,6 +2,7 @@
 
 <?php $page_title = 'Staff Menu'; ?>
 <?php include(SHARED_PATH . '/staff_header.php'); ?>
+<?php require_login() ; ?>
 
 <div id="content">
   <div id="main-menu">
