@@ -169,6 +169,13 @@
 
     }
 
+    static function get_count(){
+      $sql ='SELECT COUNT(*) FROM '.static::$table_name;
+      $result = self::$database->query($sql);
+      $row = $result->fetch_array();
+      return array_shift($row);
+    }
+
   }
 
 

@@ -2,24 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3cd8d40a-b183-4b71-bca5-0aa72deaf246" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/private/classes/pagination.class.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/private/classes/session.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/private/classes/session.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/private/initialize.php" beforeDir="false" afterPath="$PROJECT_DIR$/private/initialize.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/private/shared/staff_header.php" beforeDir="false" afterPath="$PROJECT_DIR$/private/shared/staff_header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/private/status_error_functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/private/status_error_functions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/staff/admins/delete.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/staff/admins/delete.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/staff/admins/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/staff/admins/edit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/staff/admins/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/staff/admins/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/staff/admins/new.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/staff/admins/new.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/staff/admins/show.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/staff/admins/show.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/staff/bicycles/delete.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/staff/bicycles/delete.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/staff/bicycles/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/staff/bicycles/edit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/private/classes/DatabaseObject.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/private/classes/DatabaseObject.class.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/staff/bicycles/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/staff/bicycles/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/staff/bicycles/new.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/staff/bicycles/new.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/staff/bicycles/show.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/staff/bicycles/show.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/staff/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/staff/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/staff/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/staff/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/staff/logout.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/staff/logout.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,78 +16,37 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/staff/login.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="28" selection-start-line="28" selection-end-line="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/private/shared/staff_header.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="28" selection-start-line="28" selection-end-line="28" />
+            <state relative-caret-position="420">
+              <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="38" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/private/status_error_functions.php">
+        <entry file="file://$PROJECT_DIR$/public/staff/login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="480">
+              <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/private/classes/session.class.php">
+        <entry file="file://$PROJECT_DIR$/public/staff/bicycles/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="37" column="46" lean-forward="true" selection-start-line="37" selection-start-column="46" selection-end-line="37" selection-end-column="46" />
+            <state relative-caret-position="225">
+              <caret line="78" column="56" selection-start-line="78" selection-start-column="56" selection-end-line="78" selection-end-column="56" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/staff/logout.php">
+        <entry file="file://$PROJECT_DIR$/../../../../../../bin/phpMyAdmin/db_sql.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/staff/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/private/shared/public_header.php">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/private/initialize.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="45" selection-start-line="45" selection-end-line="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/private/classes/DatabaseObject.class.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="31" selection-start-line="31" selection-end-line="31" />
+            <state relative-caret-position="180">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
             </state>
           </provider>
         </entry>
@@ -111,6 +56,47 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
               <caret line="7" selection-start-line="7" selection-end-line="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/staff/index.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/private/initialize.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="207">
+              <caret line="45" selection-start-line="45" selection-end-line="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/private/classes/bicycle.class.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/private/classes/pagination.class.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="350">
+              <caret line="52" column="5" lean-forward="true" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/staff/bicycles/edit.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="20" column="61" selection-start-line="20" selection-start-column="61" selection-end-line="20" selection-end-column="61" />
             </state>
           </provider>
         </entry>
@@ -139,26 +125,27 @@
         <option value="$PROJECT_DIR$/private/classes/databaseObject.class.php" />
         <option value="$PROJECT_DIR$/private/classes/bicycle.class.php" />
         <option value="$PROJECT_DIR$/public/staff/admins/form_fields.php" />
-        <option value="$PROJECT_DIR$/private/classes/DatabaseObject.class.php" />
         <option value="$PROJECT_DIR$/private/validation_functions.php" />
         <option value="$PROJECT_DIR$/private/classes/admin.class.php" />
-        <option value="$PROJECT_DIR$/private/status_error_functions.php" />
         <option value="$PROJECT_DIR$/public/staff/admins/show.php" />
-        <option value="$PROJECT_DIR$/public/staff/admins/delete.php" />
-        <option value="$PROJECT_DIR$/public/staff/admins/edit.php" />
         <option value="$PROJECT_DIR$/public/staff/admins/index.php" />
-        <option value="$PROJECT_DIR$/public/staff/admins/new.php" />
-        <option value="$PROJECT_DIR$/public/staff/bicycles/delete.php" />
-        <option value="$PROJECT_DIR$/public/staff/bicycles/edit.php" />
-        <option value="$PROJECT_DIR$/public/staff/bicycles/index.php" />
-        <option value="$PROJECT_DIR$/public/staff/bicycles/new.php" />
         <option value="$PROJECT_DIR$/public/staff/bicycles/show.php" />
         <option value="$PROJECT_DIR$/public/staff/logout.php" />
         <option value="$PROJECT_DIR$/private/initialize.php" />
         <option value="$PROJECT_DIR$/public/staff/login.php" />
         <option value="$PROJECT_DIR$/public/staff/index.php" />
         <option value="$PROJECT_DIR$/private/shared/staff_header.php" />
+        <option value="$PROJECT_DIR$/private/status_error_functions.php" />
+        <option value="$PROJECT_DIR$/public/staff/admins/delete.php" />
+        <option value="$PROJECT_DIR$/public/staff/admins/edit.php" />
+        <option value="$PROJECT_DIR$/public/staff/admins/new.php" />
+        <option value="$PROJECT_DIR$/public/staff/bicycles/delete.php" />
+        <option value="$PROJECT_DIR$/public/staff/bicycles/edit.php" />
+        <option value="$PROJECT_DIR$/public/staff/bicycles/new.php" />
         <option value="$PROJECT_DIR$/private/classes/session.class.php" />
+        <option value="$PROJECT_DIR$/private/classes/DatabaseObject.class.php" />
+        <option value="$PROJECT_DIR$/private/classes/pagination.class.php" />
+        <option value="$PROJECT_DIR$/public/staff/bicycles/index.php" />
       </list>
     </option>
   </component>
@@ -302,7 +289,9 @@
       <workItem from="1545595902902" duration="56000" />
       <workItem from="1545596023006" duration="1055000" />
       <workItem from="1545648931762" duration="1725000" />
-      <workItem from="1545685990632" duration="1265000" />
+      <workItem from="1545685990632" duration="2774000" />
+      <workItem from="1545777515925" duration="1989000" />
+      <workItem from="1545820586755" duration="3691000" />
     </task>
     <task id="LOCAL-00001" summary="create a new record and sanitizing the values inserted by the user">
       <created>1544361450863</created>
@@ -360,23 +349,37 @@
       <option name="project" value="LOCAL" />
       <updated>1545568655156</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="page access control added and a time out for each session.">
+      <created>1545687388750</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1545687388750</updated>
+    </task>
+    <task id="LOCAL-00010" summary="show the session message after each operation">
+      <created>1545689937489</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1545689937489</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71634000" />
+    <option name="totallyTimeSpent" value="78823000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="803" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2725322" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18669528" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32630098" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49928468" weight="0.3994374" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.49928468" visible="true" weight="0.3994374" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -405,18 +408,9 @@
     <MESSAGE value="added the work area for the admins but not completed yet" />
     <MESSAGE value="hashing password, validation for admin, and admin logging in is added" />
     <MESSAGE value="define a session class to keep track of the logged in admin" />
-    <option name="LAST_COMMIT_MESSAGE" value="define a session class to keep track of the logged in admin" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/public/staff/login.php</url>
-          <line>21</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="page access control added and a time out for each session." />
+    <MESSAGE value="show the session message after each operation" />
+    <option name="LAST_COMMIT_MESSAGE" value="show the session message after each operation" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/public/detail.php">
@@ -458,13 +452,6 @@
     <entry file="file://$PROJECT_DIR$/private/db_credentials.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/private/classes/bicycle.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="708">
-          <caret line="104" column="3" lean-forward="true" selection-start-line="1" selection-end-line="104" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/staff/admins/form_fields.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -493,73 +480,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/staff/admins/delete.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/staff/admins/edit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/staff/admins/new.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/staff/admins/show.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="5" lean-forward="true" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/staff/bicycles/delete.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/staff/bicycles/edit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/staff/bicycles/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/staff/bicycles/new.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/staff/bicycles/show.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/staff/admins/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -587,38 +511,126 @@
     <entry file="file://$PROJECT_DIR$/private/shared/public_header.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/private/classes/DatabaseObject.class.php">
+    <entry file="file://$PROJECT_DIR$/public/staff/logout.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        <state relative-caret-position="105">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/staff/login.php">
+    <entry file="file://$PROJECT_DIR$/public/staff/admins/delete.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        <state relative-caret-position="285">
+          <caret line="19" column="56" selection-start-line="19" selection-start-column="56" selection-end-line="19" selection-end-column="56" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/private/initialize.php">
+    <entry file="file://$PROJECT_DIR$/public/staff/admins/edit.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="45" selection-start-line="45" selection-end-line="45" />
+        <state relative-caret-position="300">
+          <caret line="20" column="58" selection-start-line="20" selection-start-column="58" selection-end-line="20" selection-end-column="58" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/private/shared/staff_header.php">
+    <entry file="file://$PROJECT_DIR$/public/staff/admins/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        <state relative-caret-position="60">
+          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/staff/admins/new.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="58" selection-start-line="14" selection-start-column="58" selection-end-line="14" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/staff/admins/show.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-41">
+          <caret line="3" column="5" lean-forward="true" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/staff/bicycles/delete.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="19" column="58" selection-start-line="19" selection-start-column="58" selection-end-line="19" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/staff/bicycles/new.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/private/classes/session.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="68" selection-start-line="68" selection-end-line="68" />
+          <folding>
+            <element signature="n#__construct#0;n#Session#0;n#!!top" />
+            <element signature="n#check_logged_in#0;n#Session#0;n#!!top" />
+            <element signature="n#logging_out#0;n#Session#0;n#!!top" />
+            <element signature="n#check_stored_id#0;n#Session#0;n#!!top" />
+            <element signature="n#get_username#0;n#Session#0;n#!!top" />
+            <element signature="n#login_timeout#0;n#Session#0;n#!!top" />
+            <element signature="n#msg#0;n#Session#0;n#!!top" />
+            <element signature="n#clear_msg#0;n#Session#0;n#!!top" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/private/status_error_functions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="315">
+          <caret line="21" column="23" lean-forward="true" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/private/classes/pagination.php" />
+    <entry file="file://$PROJECT_DIR$/private/shared/staff_header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/staff/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/private/initialize.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="45" selection-start-line="45" selection-end-line="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/private/classes/DatabaseObject.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/staff/bicycles/edit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="61" selection-start-line="20" selection-start-column="61" selection-end-line="20" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../../../bin/mamp/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
@@ -629,24 +641,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../../../bin/phpMyAdmin/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="34" column="9" lean-forward="true" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../../../bin/phpMyAdmin/db_sql.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/staff/index.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/private/classes/bicycle.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/staff/logout.php">
+    <entry file="file://$PROJECT_DIR$/private/classes/pagination.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="350">
+          <caret line="52" column="5" lean-forward="true" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/private/classes/session.class.php">
+    <entry file="file://$PROJECT_DIR$/public/staff/bicycles/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="37" column="46" lean-forward="true" selection-start-line="37" selection-start-column="46" selection-end-line="37" selection-end-column="46" />
+        <state relative-caret-position="225">
+          <caret line="78" column="56" selection-start-line="78" selection-start-column="56" selection-end-line="78" selection-end-column="56" />
         </state>
       </provider>
     </entry>

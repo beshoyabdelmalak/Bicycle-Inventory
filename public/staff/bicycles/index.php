@@ -2,9 +2,20 @@
 
 <?php
   require_login();
-// Find all bicycles;
-$bicycles = Bicycle::find_all();
-  
+
+  $current_page = $_GET['page'] ?? 1;
+  $per_page = 3;
+  $count = Bicycle::get_count();
+  $pagination = new Pagination($per_page, $current_page, $count);
+
+
+  //now find the page that will be shown
+    $sql = 'SELECT * FROM bicycles ';
+    $sql .= 'LIMIT '. $per_page.' ';
+    $sql .='OFFSET '.$pagination->offset();
+
+    $bicycles = Bicycle::find_by_sql($sql);
+
 ?>
 <?php $page_title = 'Bicycles'; ?>
 <?php include(SHARED_PATH . '/staff_header.php'); ?>
@@ -48,6 +59,31 @@ $bicycles = Bicycle::find_all();
     	  </tr>
       <?php } ?>
   	</table>
+    <?php
+
+      if($pagination->total_pages() > 1) {
+
+        $url = url_for('/staff/bicycles/index.php');
+
+        echo "<div class \"pagination\" >";
+
+        if ($pagination->next_page()) {
+              $out = "<a href ='".$url;
+              $out .= '?page='. $pagination->next_page()."'";
+              $out .= '> Next &raquo</a>';
+              echo $out;
+        }
+
+        if ($pagination->previous_page()) {
+          $out = "<a href ='".$url;
+          $out .= '?page='. $pagination->previous_page()."'";
+          $out .= '> &laquo Prev</a>';
+          echo $out;
+        }
+        echo "</div>";
+      }
+
+    ?>
 
   </div>
 
