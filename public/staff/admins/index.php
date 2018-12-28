@@ -3,8 +3,18 @@
 <?php
 
   require_login();
-// Find all bicycles;
-$admins = Admin::find_all();
+  $current_page = $_GET['page'] ?? 1;
+  $per_page = 3;
+  $count = Admin::get_count();
+  $pagination = new Pagination($per_page, $current_page, $count);
+
+
+  //now find the page that will be shown
+  $sql = 'SELECT * FROM admins ';
+  $sql .= 'LIMIT '. $per_page.' ';
+  $sql .='OFFSET '.$pagination->offset();
+
+  $admins = Admin::find_by_sql($sql);
   
 ?>
 <?php $page_title = 'Admins'; ?>
@@ -43,7 +53,10 @@ $admins = Admin::find_all();
     	  </tr>
       <?php } ?>
   	</table>
-
+    <?php
+      $url = url_for('/staff/admins/index.php');
+      echo $pagination->links($url);
+    ?>
   </div>
 
 </div>

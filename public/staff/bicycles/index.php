@@ -60,29 +60,8 @@
       <?php } ?>
   	</table>
     <?php
-
-      if($pagination->total_pages() > 1) {
-
-        $url = url_for('/staff/bicycles/index.php');
-
-        echo "<div class \"pagination\" >";
-
-        if ($pagination->next_page()) {
-              $out = "<a href ='".$url;
-              $out .= '?page='. $pagination->next_page()."'";
-              $out .= '> Next &raquo</a>';
-              echo $out;
-        }
-
-        if ($pagination->previous_page()) {
-          $out = "<a href ='".$url;
-          $out .= '?page='. $pagination->previous_page()."'";
-          $out .= '> &laquo Prev</a>';
-          echo $out;
-        }
-        echo "</div>";
-      }
-
+      $url = url_for('/staff/bicycles/index.php');
+      echo $pagination->links($url);
     ?>
 
   </div>

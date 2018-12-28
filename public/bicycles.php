@@ -26,8 +26,18 @@
       </tr>
 
 <?php
+  $current_page = $_GET['page'] ?? 1;
+  $per_page = 3;
+  $count = Bicycle::get_count();
+  $pagination = new Pagination($per_page, $current_page, $count);
 
-$bikes = Bicycle::find_all();
+
+  //now find the page that will be shown
+  $sql = 'SELECT * FROM bicycles ';
+  $sql .= 'LIMIT '. $per_page.' ';
+  $sql .='OFFSET '.$pagination->offset();
+
+  $bikes = Bicycle::find_by_sql($sql);
 
 ?>
       <?php foreach($bikes as $bike) { ?>
@@ -45,6 +55,10 @@ $bikes = Bicycle::find_all();
       <?php } ?>
 
     </table>
+    <?php
+      $url = url_for('/bicycles.php');
+      echo $pagination->links($url);
+    ?>
 
   </div>
 

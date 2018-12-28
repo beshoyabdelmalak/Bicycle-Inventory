@@ -52,6 +52,52 @@
       return $this->current_page;
     }
 
+    public function next_link($url=''){
+      if ($this->next_page()) {
+        $out = "<a href ='".$url;
+        $out .= '?page='. $this->next_page()."'";
+        $out .= '> Next &raquo</a>';
+        return $out;
+      }
+    }
+
+    public function number_links($url=''){
+      $out ='';
+      for ($i = 1 ; $i <= $this->total_pages() ; $i++){
+        if ($i == $this->get_current_page()){
+          $out .= "<span class='selected'>";
+          $out .= $i ."</span>";
+        }else {
+          $out .= "<a href ='" . $url;
+          $out .= '?page=' . $i . "'";
+          $out .= '> ' . $i . '</a>';
+        }
+      }
+      return $out;
+    }
+
+    public function previous_link($url=''){
+      if ($this->previous_page()) {
+        $out = "<a href ='".$url;
+        $out .= '?page='. $this->previous_page()."'";
+        $out .= '> &laquo Prev</a>';
+        return $out;
+      }
+    }
+
+    public function links($url=''){
+      $out = '';
+      if($this->total_pages() > 1) {
+        $out = "<div class='pagination' >";
+        $out .= $this->next_link($url);
+        $out .= $this->number_links($url);
+        $out .= $this->previous_link($url);
+        $out .= "</div>";
+      }
+
+      return $out;
+    }
+
   }
 
 
